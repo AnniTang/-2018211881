@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>知乎 - 有问题，就会有答案</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .SignFlowHomepage {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            background-image: url(https://static.zhihu.com/heifetz/assets/sign_bg.db29b0fb.png);
+            background-repeat: no-repeat;
+            background-color: #b8e5f8;
+            background-size: cover;
+            width: 100%;
+            height: 100vh;
+            overflow: auto;
+        }
+
+        .SignFlowHomepage-content {
+            -webkit-box-flex: 1;
+            -ms-flex: 1 1;
+            flex: 1 1;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            border-radius: 2px;
+            min-height: 688px;
+            height: calc(100% - 42px);
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .SignFlow-tab {
+            font-size: 16px;
+            line-height: 60px;
+            height: 60px;
+            margin-right: 24px;
+            cursor: pointer;
+        }
+
+        .Button--primary.Button--blue {
+            color: #fff;
+            background-color: #06f;
+        }
+
+        .SignFlow-submitButton {
+            width: 100%;
+            margin-top: 30px;
+            height: 48px;
+        }
+
+        .Button--blue {
+            color: #06f;
+            border-color: #06f;
+        }
+
+        .Button {
+            display: inline-block;
+            padding: 16px;
+            font-size: 14px;
+            line-height: 32px;
+            text-align: center;
+            cursor: pointer;
+            background: none;
+            border: 1px solid;
+            border-radius: 3px;
+        }
+
+        .css-zvnmar {
+            box-sizing: border-box;
+            margin: 0;
+            min-width: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            box-shadow: 0 1px 3px rgb(18 18 18 / 10%);
+            border-radius: 2px;
+            background-color: #FFFFFF;
+            width: 400px;
+            overflow: hidden;
+        }
+
+        .Login-switchType {
+            color: #175199;
+        }
+
+        .Login-switch {
+            text-align: left;
+            font-weight: 600;
+            color: #121212;
+            position: relative;
+            cursor: pointer;
+            padding: 20px 0px 18px 0px !important;
+            border-bottom: 3px#0084FF solid;
+        }
+
+        .Login-switchs {
+            text-align: left;
+            font-size: 16px;
+            line-height: 60px;
+            height: 60px;
+            margin-right: 24px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .Button--link,
+        .Button--plain {
+            height: auto;
+            padding: 0;
+            line-height: inherit;
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
+
+        .Login-cannotLogin {
+            float: right;
+        }
+
+        .SignFlowHomepage-logo {
+            width: 128px;
+            height: 81px;
+            margin-bottom: 24px;
+        }
+
+        .SignContainer-tip {
+
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            padding: 12px 24px;
+            color: grey;
+            font-size: 13px;
+            width: 400px;
+            background-color: #FFFFFF;
+        }
+
+        .css-1k01q48 {
+            box-sizing: border-box;
+            margin: 0;
+            min-width: 0;
+            padding-left: 24px;
+            padding-right: 24px;
+            color: #0066FF;
+            width: 400px;
+            height: 60px;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            background-color: #F6F6F6;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        div {
+            display: block;
+        }
+
+        .content_login {
+            width: 400px;
+            height: 60px;
+            padding: 0 24px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            color: #8590a6;
+            background: #fff;
+        }
+
+        .Input-wrapper {
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            width: 100%;
+            height: 48px;
+            padding: 0;
+            font-size: 14px;
+            background: #fff;
+            border-bottom: 1px solid #ebebeb;
+            border-radius: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            outline: none;
+            margin: 0 auto;
+        }
+
+        .Input-wrappers {
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            width: 100%;
+            height: 48px;
+            padding: 0;
+            font-size: 14px;
+            background: #fff;
+            border-bottom: 1px solid #ebebeb;
+            border-radius: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+
+            margin: 0 auto;
+        }
+
+        input {
+            border: none;
+            outline: none;
+        }
+
+        .content_login_select {
+            font-size: 16px;
+            height: 18px;
+            padding: 0px 24px;
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .Download {
+            box-sizing: border-box;
+            margin: 0;
+            min-width: 0;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            text-align: right;
+        }
+
+        .Login-socialButtonGroup {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin-left: 2 px;
+            -webkit-transition: opacity .3s ease;
+            transition: opacity .3s ease;
+            color: #8590a6;
+        }
+        .Logindirection{
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="SignFlowHomepage">
+        <div class="SignFlowHomepage-content">
+            <img alt="知乎logo" class="SignFlowHomepage-logo"
+                src="https://pic2.zhimg.com/80/v2-f6b1f64a098b891b4ea1e3104b5b71f6_720w.png">
+            <div class="css-zvnmar">
+                <div class="Logindirection">
+                <div class="Login-switchs"><span>免密码登录</span>
+                </div>
+                <div class="Login-switch">
+                    <div><span>密码登录</span>
+                    </div>
+                </div>
+                </div>
+
+                <div class="Input-wrapper">
+                    <input type="text" name="userName" placeholder="手机号或邮箱">
+                    <br>
+                </div>
+                <div class="Input-wrappers">
+                    <input type="password" name="password" placeholder="密码">
+                    <br>
+                </div>
+                <div class="Login-options">
+                    <button type="button" class="Button Login-switchType Button--plain">海外手机号登录</button>
+                    <button type="button" class="Button Login-cannotLogin Button--plain">忘记密码?</button><br><br>
+                    <button type="submit" class="Button SignFlow-submitButton Button--primary Button--blue">登录</button>
+                </div>
+                <div class="SignContainer-tip">
+                    <div>未注册手机验证后自动登录，注册即代表同意
+                        <a href="https://www.zhihu.com/term/zhihu-terms">《知乎协议》</a><br>
+                        <a href="https://www.zhihu.com/term/privacy">《隐私保护指引》</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content_login">
+                <span>社交账号登录</span>
+                <span class="Login-socialButtonGroup">
+                    <button type="button" class="Button Login-socialButton Button--plain"></button>
+                    <img src="E:\微信.png" width="20" height="20">微信
+
+                    <button type="button" class="Button Login-socialButton Button--plain"></button>
+                    <img src="E:\qq.png" width="20" height="20">QQ
+
+                    <button type="button" class="Button Login-socialButton Button--plain"></button>
+                    <img src="E:\微博.png" width="20" height="20">微博
+                </span>
+            </div>
+            <div class="css-1k01q48">
+                <div class="jigouhao">
+                    <img src="E:\认证.png" width="26" height="26">
+                    <a href="https://www.zhihu.com/org/signup">开通机构号</a>
+                </div>
+                <div class="Download">
+                    <img src="E:\知乎logo.png" width="20" height="20">
+                    <a href="#">下载知乎App</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
